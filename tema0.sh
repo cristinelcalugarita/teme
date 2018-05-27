@@ -60,8 +60,8 @@ echo "Apasa/selecteaza 4 pentru xxxxx 4: "
 echo "Apasa/selecteaza 5 pentru xxxxx 5: "
 echo "Apasa/selecteaza 6 pentru xxxxx 6: "
 echo "Apasa/selecteaza q pentru a iesi din program q: "
-echo "\n"
-echo "Selecteaza optiunea dorita \c"
+echo -e "\n"
+echo -e "Selecteaza optiunea dorita \c"
 }
 
 citeste_optiuni() {
