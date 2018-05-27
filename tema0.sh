@@ -26,7 +26,13 @@ $TOUCH $nume_fisier
 }
 
 drepturi_fisier () {
-echo
+ls -la *
+echo "introdu nume fisier"
+read fisier
+echo "introdu drepturile dorite"
+read arg
+chmod $arg $fisier
+ls -la *
 }
 
 sortare_lista () {
@@ -55,7 +61,7 @@ echo "Meniu script"
 echo "==============================================="
 echo "Apasa/selecteaza 1 pentru afisare informatii utilizator 1: "
 echo "Apasa/selecteaza 2 pentru a crea un fiser 2: "
-echo "Apasa/selecteaza 3 pentru xxxxx 3: "
+echo "Apasa/selecteaza 3 pentru a seta drepturi fisier/e 3: "
 echo "Apasa/selecteaza 4 pentru xxxxx 4: "
 echo "Apasa/selecteaza 5 pentru xxxxx 5: "
 echo "Apasa/selecteaza 6 pentru xxxxx 6: "
@@ -70,7 +76,7 @@ read raspuns
 case "$raspuns" in
 1) info_utilizator ;;
 2) fisier_nou ;;
-3) xxxx ;;
+3) drepturi_fisier ;;
 4) xxxx ;;
 5) xxxx ;;
 6) xxxx ;;
