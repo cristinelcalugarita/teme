@@ -3,6 +3,7 @@ trap '' 2
 # #####
 # Definire variabile script
 #
+CD=/usr/bin/cd
 CP=/bin/cp
 TOUCH=/usr/bin/touch
 CHMOD=/bin/chmod
@@ -14,8 +15,14 @@ FILE=/usr/bin/file
 # #####
 # Definire functii
 #
+spatiu_de_joaca() {
+$CD /tmp
+}
+
 fisier_nou() {
-echo
+echo "introdu numele fisierului ce se doreste a fi creat: "
+read nume_fisier
+$TOUCH $nume_fisier
 }
 
 drepturi_fisier () {
@@ -31,7 +38,8 @@ echo
 }
 
 info_utilizator() {
-echo
+rez0=$(cat /etc/passwd|grep -i `whoami`|head -1|sed 's/:/ /g'|awk '{print "Utilizator -> "$1" || Director_HOME -> "$6" || Shell -> "$NF}')
+echo $rez0
 }
 
 info_pc () {
@@ -45,8 +53,8 @@ clear
 echo "==============================================="
 echo "Meniu script"
 echo "==============================================="
-echo "Apasa/selecteaza 1 pentru xxxxx 1: "
-echo "Apasa/selecteaza 2 pentru xxxxx 2: "
+echo "Apasa/selecteaza 1 pentru afisare informatii utilizator 1: "
+echo "Apasa/selecteaza 2 pentru a crea un fiser 2: "
 echo "Apasa/selecteaza 3 pentru xxxxx 3: "
 echo "Apasa/selecteaza 4 pentru xxxxx 4: "
 echo "Apasa/selecteaza 5 pentru xxxxx 5: "
@@ -60,8 +68,8 @@ citeste_optiuni() {
 # functia citeste_optiuni preia optiunile alese/selectate si executa operatiunile descrise
 read raspuns
 case "$raspuns" in
-1) whoami ;;
-2) xxxx ;;
+1) info_utilizator ;;
+2) fisier_nou ;;
 3) xxxx ;;
 4) xxxx ;;
 5) xxxx ;;
