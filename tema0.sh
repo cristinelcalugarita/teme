@@ -84,6 +84,6 @@ while true
 do
 arata_meniu
 citeste_optiuni
-echo "Apasa Enteri/Return pentru a continua \c"
+echo -e "Apasa Enteri/Return pentru a continua \c"
 read input
 done
