@@ -29,9 +29,13 @@ drepturi_fisier () {
 ls -la *
 echo "introdu nume fisier"
 read fisier
-echo "introdu drepturile dorite"
-read arg
-chmod $arg $fisier
+echo "introdu drepturile dorite pt utilizator"
+read arg0
+echo "introdu drepturile dorite pt grup"
+read arg1
+echo "introdu drepturile dorite pt others"
+read arg2
+chmod u=$arg1,g=$arg2,o=$arg3 $fisier
 ls -la *
 }
 
